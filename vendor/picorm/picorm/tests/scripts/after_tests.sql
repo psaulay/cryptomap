@@ -1,4 +1,0 @@
-TRUNCATE TABLE brands;
-TRUNCATE TABLE cars;
-TRUNCATE TABLE car_have_tag;
-TRUNCATE TABLE tags;
