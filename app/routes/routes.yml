@@ -1,25 +1,13 @@
-- path: 
-  - /categories
-  controller: Controllers\CategoryController::index
 
 - path: 
-  - /category/delete/(\d+)
-  controller: Controllers\CategoryController::delete
+    - /news/twitter
+  controller: Controllers\TwitterController::getTweets
 
 - path: 
-  - /category/add
-  controller: Controllers\CategoryController::add
-
-- path: 
-  - /todo/delete/(\d+)
-  controller: Controllers\TodoController::delete
-
-- path: 
-  - /todo/add
-  controller: Controllers\TodoController::add
+    - /map
+  controller: Controllers\MapController::index
 
 - path:
-    - /todos/(\d+)
-    - /todos
     - 
   controller: Controllers\TodoController::index
+

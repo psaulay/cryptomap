@@ -1,31 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        {% block metas %}
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <meta name="description" content="">
-            <meta name="author" content="">
-        {% endblock %}
-        
-        {% block stylesheets %}
-            <link rel="stylesheet" href="{{ url('assets/css/main.css') }}">
-        {% endblock %}
-        
-        <title>{% block title %}Micro-MVC{% endblock %}</title>
-    </head>
+<head>
+    {% block metas %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+    {% endblock %}
 
-  <body>
+    {% block stylesheets %}
+        <style>
+        .date{
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size:0.875em;
+            font-weight: bold;
+            color: grey;
+        }
+        .bleu{
+            background-color: #1DA1F2;
+            color:white;
+        }
+        .bleu:hover{
+            background-color: #ffff;
+            color: #1DA1F2 ;
+            font-weight: bold;
+        }
+        #hashtag{
+            font-weight: bold;
+        }
+        a:hover{
+            text-decoration: none !important;
+        }
+        #mapid{
+           height: 500px; 
+           border: 1px solid black;
+       }
+       </style>
+       <link rel="stylesheet" href="{{ url('assets/css/main.css') }}">
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+       integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+       crossorigin=""/>
+   {% endblock %}
+
+   <title>{% block title %}Micro-MVC{% endblock %}</title>
+</head>
+
+<body>
     {% include "partials/navbar.html.twig" %}
     
     <div class="container">
         {% include "partials/flashbag.html.twig" %}
         
         {% block content %}{% endblock %}
-    </div>
+        </div>
 
-    {% block javascripts %}
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    {% endblock %}
-  </body>
-</html>
+        {% block javascripts %}
+            <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+   
+        {% endblock %}
+    </body>
+    </html>

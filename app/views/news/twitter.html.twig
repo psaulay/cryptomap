@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    
+    <div class="row">
+        <div class="col-lg-6
+        ">
+        <form action="" method="POST">
+            <span style="font-size: 2em; color: #1DA1F2;">
+              <i class="fab fa-twitter mr-3"></i>
+          </span>
+          <button name="hashtag" id="hashtag" class="btn bleu mb-3 mr-2" value="bitcoin">#BITCOIN</button>
+          <button name="hashtag" id="hashtag" class="btn bleu mb-3 mr-2" value="crypto">#CRYPTO</button>
+          <button name="hashtag" id="hashtag" class="btn bleu mb-3 mr-2" value="blockchain">#BLOCKCHAIN</button>
+          <button name="hashtag" id="hashtag" class="btn bleu mb-3 mr-2" value="ICO">#ICO</button>
+      </form>
+  </div>
+</div>
+<div class="row">
+
+    {% for status in statuses.statuses %}
+
+        <div class="col-lg-4 col-md-6">
+            <div class="card mb-3" style="height:325px;">
+                <div class="card-body text-center">
+                    <p><img class="img-fluid rounded-circle border" src="{{ status.user.profile_image_url_https }}" alt="card image"></p>
+                    <h4 class="card-title"><a href="https://twitter.com/{{ status.user.screen_name }}" target="_blank">{{ status.user.name }} <small>@{{ status.user.screen_name }}</small></a></h4>
+                    <p class="card-text">{{ status.text }}</p>
+                    <a href="https://twitter.com/statuses/{{ status.id }}" class="btn bleu btn-sm" target="_blank"><i class="fab fa-twitter mr-2"></i>Voir tweet</a>
+                    <p class="card-text text-right date">{{ status.created_at|date("g:i d/m/Y", "Europe/Paris") }}</p>
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %} 
