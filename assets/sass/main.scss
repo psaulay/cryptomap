@@ -24,7 +24,7 @@ html, body {
 
 #marquee {
   z-index: 1;
-  position: absolute;
+  position: fixed;
   display: flex;
   align-items: center;
   font-weight: bold;

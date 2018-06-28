@@ -2,3 +2,4 @@ vendor/
 node_modules/
 dploy.yaml
 .env
+assets/css/dist/
