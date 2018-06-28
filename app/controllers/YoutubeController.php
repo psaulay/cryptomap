@@ -19,7 +19,7 @@ class YoutubeController extends Controller {
     $maxResults =  50;
     $order      = 'date';
     $langage    = 'fr';
-    $key        = 'AIzaSyAV9eb5jfZUHg0XPuwzo2zRS_Kwimlz4mg';
+    $key        = '*******************************';
 
     // $url    = $base_url.'&q='.$query.'&maxResults='.$maxResults.'&relevanceLanguage='.$langage.'&order='.$order.'&safeSearch=none&key='.$key;
 
