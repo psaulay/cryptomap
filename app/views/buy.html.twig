@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %} 
+
+
+
+{% block content %}
+
+
+    <table class="table"> 
+        <thead class="thead-dark">
+            <tr>
+                <th>Username</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Temp_price</th>
+                <th>Min_amount</th>
+                <th>Max_amount</th>
+                <th>Puplic_view</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <tr>
+                <th>{{result.data.profile.username}}</th>
+                <th>{{result.data.lat}}</th>
+                <th>{{result.data.lon}}</th>
+                <th>{{result.data.temp_price}}</th>
+                <th>{{result.data.min_amount}}</th>
+                <th>{{result.data.max_amount}}</th>
+                <th><a>{{result.actions.public_view}}</a></th>
+
+            </tr>
+
+            {% endfor %}
+        <tbody>
+
+    </table>
+
+    <div id="mapid"></div>
+
+{% endblock %}

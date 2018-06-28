@@ -23,3 +23,8 @@
     - /todos
     - 
   controller: Controllers\TodoController::index
+
+- path: 
+  -
+  - /buy
+  controller: Controllers\LocalbitcoinsController::index

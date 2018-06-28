@@ -18,12 +18,11 @@ class TodoController extends Controller {
     {
         // $page isn't used actually. This is just for argument demonstration
         
-        $todos = Todo::find();
-        $categories = Category::find();
+        // $todos = Todo::find();
+        // $categories = Category::find();
 
         echo $this->twig->render('todos/index.html.twig', [
-            'todos' => $todos,
-            'categories' => $categories,
+          
         ]);
     }
     
