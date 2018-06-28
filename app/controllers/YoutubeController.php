@@ -15,15 +15,15 @@ class YoutubeController extends Controller {
   {
 
     $base_url   = 'https://www.googleapis.com/youtube/v3/search?part=snippet';
-    $query      = 'bitcoin';
-    $maxResults =  50;
+    $query      = 'bitcoin-fr';
+    $maxResults =  10;
     $order      = 'date';
     $langage    = 'fr';
     $key        = 'AIzaSyAV9eb5jfZUHg0XPuwzo2zRS_Kwimlz4mg';
 
-    // $url    = $base_url.'&q='.$query.'&maxResults='.$maxResults.'&relevanceLanguage='.$langage.'&order='.$order.'&safeSearch=none&key='.$key;
+    $url    = $base_url.'&q='.$query.'&maxResults='.$maxResults.'&regionCode=FR&relevanceLanguage='.$langage.'&order='.$order.'&safeSearch=none&key='.$key;
 
-    $url    = $base_url.'&q='.$query.'&location=46.72574,2.990717&locationRadius=300km&type=video&key='.$key;
+    // $url    = $base_url.'&q='.$query.'&location=46.72574,2.990717&locationRadius=300km&type=video&key='.$key;
 
     // var_dump($url); die();
 

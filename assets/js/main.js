@@ -22,3 +22,14 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: 'pk.eyJ1IjoiY3J5cHRvbWFwIiwiYSI6ImNqaXd2Z3FtcDBkMXgzcnFvdXV0OTdjZWcifQ.qmb-m_7cNzmbYU9qhnmO7A'
 
 }).addTo(map);
+
+const hamburger = document.querySelector('#iHamburger')
+
+hamburger.addEventListener('click', e => {
+
+  const   ulMobile = document.querySelector('#ul-mobile')
+        , display  = window.getComputedStyle(ulMobile).getPropertyValue('display')
+
+  display === 'block' ? ulMobile.style.display = 'none' : ulMobile.style.display = 'block'
+
+})
