@@ -1,13 +1,21 @@
 
-- path: 
-    - /news/twitter
-  controller: Controllers\TwitterController::getTweets
-
-- path: 
-    - /map
-  controller: Controllers\MapController::index
+- path:
+  -
+  controller: Controllers\HomeController::render
 
 - path:
-    - 
-  controller: Controllers\TodoController::index
+  - /buy
+  controller: Controllers\LocalbitcoinsController::render
+
+- path:
+  - /news/twitter
+  controller: Controllers\TwitterController::getTweets
+
+- path:
+  - /news/youtube
+  controller: Controllers\YoutubeController::render
+
+- path:
+  - /faq
+  controller: Controllers\FaqController::render
 

@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+
 use Core\Controllers\Controller;
 use Abraham\TwitterOAuth\TwitterOAuth;
 
@@ -9,7 +10,7 @@ use Abraham\TwitterOAuth\TwitterOAuth;
 class TwitterController extends Controller {
 
     /**
-     * Index method
+     * GetTweets method
      *
      * @param string $page
      * @return void
@@ -49,3 +50,4 @@ class TwitterController extends Controller {
     ]);
 }
 }
+

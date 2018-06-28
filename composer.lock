@@ -1,10 +1,9 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "49fa8065e3c0feb32f1f9f29eb541e25",
     "content-hash": "cb437259e9ecdc197e2cee01968581d1",
     "packages": [
         {
@@ -59,7 +58,7 @@
                 "social",
                 "twitter"
             ],
-            "time": "2017-06-30 22:02:01"
+            "time": "2017-06-30T22:02:01+00:00"
         },
         {
             "name": "phing/phing",
