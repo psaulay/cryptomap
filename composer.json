@@ -1,18 +1,19 @@
 {
-    "name": "synyster0fa7x/mvc-skeleton",
+    "name": "cryptomap",
     "type": "project",
     "license": "MIT",
     "authors": [
         {
-            "name": "Anthony Tournier",
-            "email": "anthony.tournier25@gmail.com"
+            "name": "multi",
+            "email": "no mail"
         }
     ],
     "require": {
         "twig/twig": "^2.0",
         "vlucas/phpdotenv": "^2.4",
         "symfony/yaml": "^4.1",
-        "picorm/picorm": "^0.0.7"
+        "picorm/picorm": "^0.0.7",
+        "abraham/twitteroauth": "^0.7.4"
     },
     "autoload": {
         "psr-4": {

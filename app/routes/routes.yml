@@ -1,30 +1,21 @@
-- path: 
-  - /categories
-  controller: Controllers\CategoryController::index
-
-- path: 
-  - /category/delete/(\d+)
-  controller: Controllers\CategoryController::delete
-
-- path: 
-  - /category/add
-  controller: Controllers\CategoryController::add
-
-- path: 
-  - /todo/delete/(\d+)
-  controller: Controllers\TodoController::delete
-
-- path: 
-  - /todo/add
-  controller: Controllers\TodoController::add
 
 - path:
-    - /todos/(\d+)
-    - /todos
-    - 
-  controller: Controllers\TodoController::index
-
-- path: 
   -
+  controller: Controllers\HomeController::render
+
+- path:
   - /buy
   controller: Controllers\LocalbitcoinsController::index
+
+- path:
+  - /news/twitter
+  controller: Controllers\TwitterController::getTweets
+
+- path:
+  - /news/youtube
+  controller: Controllers\YoutubeController::render
+
+- path:
+  - /faq
+  controller: Controllers\FaqController::render
+
