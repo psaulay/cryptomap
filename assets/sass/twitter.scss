@@ -1,2 +1,110 @@
 
 @import 'variables';
+
+.date{
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	font-size:0.875em;
+	font-weight: bold;
+	color: grey;
+}
+.bleu{
+	background-color: $twitter;
+	color:white;
+	font-size: 0.875em;
+}
+.bleu:hover{
+	background-color: #ffff;
+	color: $twitter;
+	font-weight: bold;
+}
+.twitter-card{
+	height: 330px;
+}
+.voir-tweet{
+	background-color: $twitter;
+	color:white;
+}
+.voir-tweet:hover{
+	font-weight: bold;
+	color: white;
+}
+#hashtag{
+	font-weight: bold;
+}
+a{
+	color: $twitter;
+}
+a:hover{
+	text-decoration: none !important;
+}
+.twitter-icon{
+	width: 125%;
+}
+.transparent{
+	background-color: transparent;
+}
+.twitter-white{
+	width: 25%;
+}
+.twitter-title{
+	color: $twitter;
+	font-weight: bold;
+	font-size: 2em;
+}
+@media (max-width: 1350px) {
+	
+	.twitter-card{
+		height: 370px;
+	}
+	h4{
+		font-size:1.3em;
+	}
+}
+@media (max-width: 1200px) {
+	
+	.twitter-card{
+		height: 320px;
+	}
+}
+@media (max-width: 768px) {
+	
+	.twitter-card{
+		height: 250px;
+	}
+
+	.twitter-title{
+		font-size: 2em;
+	}
+}
+@media (max-width: 568px) {
+	
+	.twitter-card{
+		height: 300px;
+	}
+	.twitter-title{
+		font-size: 1.6em;
+	}
+	h4{
+		font-size:1em;
+		dipslay: block;
+	}
+	p{
+		font-size: 0.9em;
+	}
+}
+@media (max-width: 370px) {
+	.twitter-icon{
+	width: 100%;
+}
+	.twitter-card{
+		height: 330px;
+	}
+	.twitter-title{
+		font-size: 1.2em;
+	}
+	p{
+		font-size: 0.875em;
+	}
+}
