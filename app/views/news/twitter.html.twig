@@ -1,42 +1,51 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-    <div class="container col-lg-10 mt-3">
+  <div class="container col-lg-10 mt-3">
     <div class="row">
 
-        <form action="" method="POST">
+      <form action="" method="POST">
+        <div class="btn-toolbar" role="toolbar">
           <button class="btn transparent mb-3 mr-3"><img  class="twitter-icon ml-2 mr-3" src="{{ url('assets/icons/twitter/twitter-blue.svg') }}" alt=""></button>
           <h4 style="display:inline;" class="twitter-title mr-3">L'ACTU TWITTER</h4>
 {#             <span style="font-size: 2em; color: #1DA1F2;">
               <img  class="twitter-icon mr-3 ml-3" src="{{ url('assets/icons/twitter/twitter.svg') }}" alt="">
               <i class="fab fa-twitter mr-3"></i>
-          </span> #}
-          <button name="hashtag" id="hashtag" class="btn bleu mb-3 mr-2" value="bitcoin">#BITCOIN</button>
-          <button name="hashtag" id="hashtag" class="btn bleu mb-3 mr-2" value="crypto">#CRYPTO</button>
-          <button name="hashtag" id="hashtag" class="btn bleu mb-3 mr-2" value="blockchain">#BLOCKCHAIN</button>
-          <button name="hashtag" id="hashtag" class="btn bleu mb-3 mr-2" value="ICO">#ICO</button>
-      </form>
+            </span> #}
+            <button name="hashtag" id="hashtag" class="btn bleu mb-3 mr-2" value="bitcoin">#BITCOIN</button>
+            <button name="hashtag" id="hashtag" class="btn bleu mb-3 mr-2" value="crypto">#CRYPTO</button>
+            <button name="hashtag" id="hashtag" class="btn bleu mb-3 mr-2" value="blockchain">#BLOCKCHAIN</button>
+            <button name="hashtag" id="hashtag" class="btn bleu mb-3 mr-2" value="ICO">#ICO</button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        {% if message %}
 
-</div>
-<div class="row">
+          <div class="col">
 
-    {% for status in statuses.statuses %}
-
-        <div class="col-xl-4 col-md-6">
-            <div class="card twitter-card mb-4">
-                <div class="card-body text-center">
-                    <p><img class="img-fluid rounded-circle border" src="{{ status.user.profile_image_url_https }}" alt="card image"></p>
-                    <h4 class="card-title"><a href="https://twitter.com/{{ status.user.screen_name }}" target="_blank">{{ status.user.name }} <small>@{{ status.user.screen_name }}</small></a></h4>
-                    <p class="card-text">{{ status.text }}</p>
-                    <a href="https://twitter.com/statuses/{{ status.id }}" class="btn voir-tweet btn-sm pr-4" target="_blank"><img class="twitter-white mr-1" src="{{ url('assets/icons/twitter/twitter-white.svg') }}" alt="">Voir tweet</a>
-                    <p class="card-text text-right date">{{ status.created_at|date("H:i d/m/Y", "Europe/Paris") }}</p>
-                </div>
-            </div>
+          <p class="message">{{ message }}</p>
         </div>
 
-    {% endfor %}
+        {% endif %}
 
-</div>
-</div>
+        {% for status in statuses.statuses %}
 
-{% endblock %} 
+          <div class="col-xl-4 col-md-6">
+            <div class="card twitter-card mb-4">
+              <div class="card-body text-center">
+                <p><img class="img-fluid rounded-circle border" src="{{ status.user.profile_image_url_https }}" alt="card image"></p>
+                <h4 class="card-title"><a href="https://twitter.com/{{ status.user.screen_name }}" target="_blank">{{ status.user.name }} <small>@{{ status.user.screen_name }}</small></a></h4>
+                <p class="card-text">{{ status.text }}</p>
+                <a href="https://twitter.com/statuses/{{ status.id }}" class="btn voir-tweet btn-sm pr-4" target="_blank"><img class="twitter-white mr-1" src="{{ url('assets/icons/twitter/twitter-white.svg') }}" alt="">Voir tweet</a>
+                <p class="card-text text-right date">{{ status.created_at|date("H:i d/m/Y", "Europe/Paris") }}</p>
+              </div>
+            </div>
+          </div>
+
+        {% endfor %}
+
+      </div>
+    </div>
+
+  {% endblock %} 
