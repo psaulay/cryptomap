@@ -1,2 +1,110 @@
 
 @import 'variables';
+
+.youtube-date {
+	font-size: 1em;
+	font-weight: bold;
+	color: grey;
+}
+
+.youtube-color {
+	background-color: $youtube;
+	color:white;
+	font-size: 0.875em;
+}
+
+.youtube-color:hover {
+  font-weight: bold;
+	background: #fff;
+	color: $youtube;
+}
+
+.youtube-card {
+	height: 380px;
+}
+
+// .a-youtube {
+// 	color: $youtube;
+// }
+//
+// a:hover {
+// 	text-decoration: none !important;
+// }
+
+.youtube-icon {
+	width: 64px;
+}
+
+.transparent {
+	background: transparent;
+}
+
+.youtube-title {
+	font-weight: bold;
+	font-size: 2em;
+  color: $youtube;
+}
+
+@media (max-width: 1350px) {
+
+	h4 {
+		font-size: 1.3em;
+	}
+
+}
+
+@media (max-width: 1200px) {
+
+	.youtube-card {
+
+	}
+
+}
+@media (max-width: 768px) {
+
+  .youtube-card {
+
+	}
+
+}
+
+@media (max-width: 568px) {
+
+  .youtube-card {
+
+	}
+
+	.youtube-title{
+		font-size: 1.6em;
+	}
+
+	h4 {
+		font-size:1em;
+		dipslay: block;
+	}
+
+	p {
+		font-size: 0.9em;
+	}
+
+}
+
+@media (max-width: 370px) {
+
+	.youtube-icon {
+  	width: 100%;
+  }
+
+	.youtube-card {
+		height: 330px;
+	}
+
+	.youtube-title {
+		font-size: 1.2em;
+	}
+
+	p {
+		font-size: 0.875em;
+	}
+
+}

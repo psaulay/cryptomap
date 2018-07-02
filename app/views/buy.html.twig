@@ -1,11 +1,9 @@
-{% extends 'base.html.twig' %} 
-
-
+{% extends 'base.html.twig' %}
 
 {% block content %}
 
 
-    <table class="table"> 
+    <table class="table">
         <thead class="thead-dark">
             <tr>
                 <th>Username</th>
@@ -37,4 +35,9 @@
 
     <div id="mapid"></div>
 
+{% endblock %}
+
+{% block javascripts %}
+  <script src="{{ url('assets/js/lib/leaflet.js') }}"></script>
+  <script src="{{ url('assets/js/main.js') }}"></script>
 {% endblock %}
