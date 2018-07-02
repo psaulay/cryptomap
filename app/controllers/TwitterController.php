@@ -23,12 +23,14 @@ class TwitterController extends Controller {
         $access_token_secret = 'dyRJAkiC5F0k38tFhqA9WYfvvzmQXGcxIiHKb7AtBBO0o';
 
         if (isset($_POST['hashtag'])) {
-         $hashtag = htmlspecialchars($_POST['hashtag']);
-     }else{
+           $hashtag = htmlspecialchars($_POST['hashtag']);
+       }else{
         $hashtag = 'bitcoin';
     }
 
+
     $connection = new TwitterOAuth($comsumer_key, $consumer_secret, $access_token, $access_token_secret);
+    $connection->setTimeouts(10, 15);
     $statuses = $connection->get("search/tweets", [
         "q" => $hashtag,
         "count" => 24,
@@ -39,15 +41,22 @@ class TwitterController extends Controller {
 
     ]);
 
-    // echo "<pre>";
-    // var_dump($statuses);
-    // echo "</pre>";
-    // die();
+    if(isset($statuses->errors)) {
+
+        $message = "Nous sommes désolés! Le service est indisponible pour le moment.";
+        echo $this->twig->render('news/twitter.html.twig', [
+            'message' => $message
+        ]);
+
+    }else{
+
+        echo $this->twig->render('news/twitter.html.twig', [
+            'statuses' => $statuses
+        ]);
+
+    }
 
 
-    echo $this->twig->render('news/twitter.html.twig', [
-        'statuses' => $statuses
-    ]);
 }
 }
 
