@@ -18,4 +18,3 @@
 - path:
   - /faq
   controller: Controllers\FaqController::render
-

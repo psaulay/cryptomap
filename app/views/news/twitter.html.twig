@@ -8,10 +8,10 @@
         <div class="btn-toolbar" role="toolbar">
           <button class="btn transparent mb-3 mr-3"><img  class="twitter-icon ml-2 mr-3" src="{{ url('assets/icons/twitter/twitter-blue.svg') }}" alt=""></button>
           <h4 style="display:inline;" class="twitter-title mr-3">L'ACTU TWITTER</h4>
-            <button name="hashtag" id="hashtag" class="btn bleu mb-3 mr-2" value="bitcoin">#BITCOIN</button>
-            <button name="hashtag" id="hashtag" class="btn bleu mb-3 mr-2" value="crypto">#CRYPTO</button>
-            <button name="hashtag" id="hashtag" class="btn bleu mb-3 mr-2" value="blockchain">#BLOCKCHAIN</button>
-            <button name="hashtag" id="hashtag" class="btn bleu mb-3 mr-2" value="ICO">#ICO</button>
+          <button name="hashtag" id="hashtag" class="btn bleu mb-3 mr-2" value="bitcoin">#BITCOIN</button>
+          <button name="hashtag" id="hashtag" class="btn bleu mb-3 mr-2" value="crypto">#CRYPTO</button>
+          <button name="hashtag" id="hashtag" class="btn bleu mb-3 mr-2" value="blockchain">#BLOCKCHAIN</button>
+          <button name="hashtag" id="hashtag" class="btn bleu mb-3 mr-2" value="ICO">#ICO</button>
         </div>
       </form>
     </div>
@@ -43,4 +43,8 @@
     </div>
   </div>
 
+{% endblock %}
+
+{% block javascripts %}
+  <script src="{{ url('assets/js/twitter.js') }}"></script>
 {% endblock %}

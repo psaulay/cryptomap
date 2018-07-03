@@ -3,6 +3,8 @@
 namespace Controllers;
 
 use Core\Controllers\Controller;
+use Core\Helpers\Validator;
+use Core\Helpers\Notificator;
 
 class YoutubeController extends Controller {
 
@@ -14,9 +16,47 @@ class YoutubeController extends Controller {
   public function render()
   {
 
-    echo $this->twig->render('news/youtube.html.twig', [
-      'videos' => $this->getVideos('bitcoin%20fr')
-    ]);
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+      echo $this->twig->render('news/youtube.html.twig', [
+        'videos' => $this->getVideos('bitcoin%20fr')
+      ]);
+
+    } else {
+
+      if (!Validator::checkPosted($_POST, ['hashtag']))
+        Notificator::notify($this->twig, 'danger', 'Désolé, une erreur est survenue');
+
+      $hashtag = Validator::sanitarize($_POST['hashtag']);
+
+      if (!$this->checkHashtag($hashtag))
+        Notificator::notify($this->twig, 'danger', 'Désolé, l\'hashtag '.$hashtag.' n\'est pas disponible.');
+
+      echo $this->twig->render('partials/videos.html.twig', [
+        'videos' => $this->getVideos($hashtag.'%20fr')
+      ]);
+
+    }
+
+  }
+
+  /**
+   * CheckHashtag method
+   *
+   * @return boolean in_array
+   */
+  private function checkHashtag($hashtag) {
+
+    $allowed = [
+
+      'bitcoin',
+      'blockchain',
+      'crypto',
+      'ico'
+
+    ];
+
+    return in_array($hashtag, $allowed);
 
   }
 
@@ -29,7 +69,7 @@ class YoutubeController extends Controller {
   {
 
     $base_url   = 'https://www.googleapis.com/youtube/v3/search?part=snippet';
-    $maxResults =  10;
+    $maxResults =  15;
     $order      = 'date';
     $langage    = 'fr';
     $key        = 'AIzaSyAV9eb5jfZUHg0XPuwzo2zRS_Kwimlz4mg';

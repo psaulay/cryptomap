@@ -1,20 +1,54 @@
 
 @import 'variables';
 
+.row-buttons {
+	z-index: 2;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	position: fixed;
+	width: 66.66667%;
+	height: 80px;
+	top: 0px;
+	// margin: 0;
+	// padding: 0 20px;
+ 	background: red;
+}
+
+.youtube-title {
+	font-weight: bold;
+	font-size: 2em;
+  color: $white;
+}
+
+.row-content {
+	// margin: 0;
+	margin-top: 110px;
+}
+
+.col-content {
+
+}
+
+.youtube-card {
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), -1px -1px 1px rgba(0, 0, 0, 0.2);
+}
+
 .youtube-date {
 	font-size: 1em;
 	font-weight: bold;
 	color: grey;
 }
 
-.youtube-color {
+.youtube-button {
+	font-weight: bold;
+	font-size: 0.9em;
 	background-color: $youtube;
 	color:white;
-	font-size: 0.875em;
 }
 
-.youtube-color:hover {
-  font-weight: bold;
+.youtube-button:hover {
 	background: #fff;
 	color: $youtube;
 }
@@ -23,26 +57,12 @@
 	height: 380px;
 }
 
-// .a-youtube {
-// 	color: $youtube;
-// }
-//
-// a:hover {
-// 	text-decoration: none !important;
-// }
-
 .youtube-icon {
 	width: 64px;
 }
 
 .transparent {
 	background: transparent;
-}
-
-.youtube-title {
-	font-weight: bold;
-	font-size: 2em;
-  color: $youtube;
 }
 
 @media (max-width: 1350px) {
@@ -104,7 +124,7 @@
 	}
 
 	p {
-		font-size: 0.875em;
+		font-size: 1em;
 	}
 
 }
