@@ -23,13 +23,4 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 }).addTo(map);
 
-const hamburger = document.querySelector('#iHamburger')
 
-hamburger.addEventListener('click', e => {
-
-  const   ulMobile = document.querySelector('#ul-mobile')
-        , display  = window.getComputedStyle(ulMobile).getPropertyValue('display')
-
-  display === 'block' ? ulMobile.style.display = 'none' : ulMobile.style.display = 'block'
-
-})

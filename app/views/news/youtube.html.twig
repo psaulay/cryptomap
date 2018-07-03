@@ -3,24 +3,37 @@
 
 {% block content %}
 
-  <div class="container col-lg-10">
-    <div class="row row-buttons">
-      <img  class="youtube-icon" src="{{ url('assets/icons/youtube/youtube.svg') }}" alt="youtube logo">
-      <h4 class="youtube-title">L'ACTU YOUTUBE</h4>
-      <div>
-        <button class="btn hashtag youtube-button" value="bitcoin">#BITCOIN</button>
-        <button class="btn hashtag youtube-button" value="crypto">#CRYPTO</button>
-        <button class="btn hashtag youtube-button" value="blockchain">#BLOCKCHAIN</button>
-        <button class="btn hashtag youtube-button" value="co">#ICO</button>
+<div class="container col-lg-10 mt-3">
+
+  <div class="row">
+    <div class="header">
+      <div class="title">
+
+        <h4 class="youtube-title"><img  class="youtube-icon" src="{{ url('assets/icons/youtube/youtube.svg') }}" alt="">L'ACTU YOUTUBE</h4>
+      </div>
+
+      <form>
+        <div class="btn-news">
+          <button class="btn hashtag youtube-color" value="bitcoin">#BITCOIN</button>
+          <button class="btn hashtag youtube-color" value="crypto">#CRYPTO</button>
+          <button class="btn hashtag youtube-color" value="blockchain">#BLOCKCHAIN</button>
+          <button class="btn hashtag youtube-color" value="co">#ICO</button>
+        </form>
       </div>
     </div>
-    <div class="row row-content">
+
+
+    <div class="row">
+
       {% include 'partials/videos.html.twig' with videos %}
+
     </div>
   </div>
+</div>
 
 {% endblock %}
 
 {% block javascripts %}
+  {{ parent() }}
   <script src="{{ url('assets/js/youtube.js') }}"></script>
 {% endblock %}

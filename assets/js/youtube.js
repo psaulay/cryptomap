@@ -11,7 +11,7 @@ const eventHashtags = () => {
 
     hashtag.addEventListener('click', () => {
 
-      post(hashtag.value, done)
+      post(hashtag.value)
 
     })
 
@@ -23,7 +23,7 @@ const eventHashtags = () => {
  > POST
 **** **** **** **** **** **** **** ****/
 
-const post = (data, cb) => {
+const post = data => {
 
   const XHR = new XMLHttpRequest()
 
@@ -41,28 +41,9 @@ const post = (data, cb) => {
       container.innerHTML = ''
       container.innerHTML = XHR.responseText
 
-      // document.querySelector('.row-videos').insertAdjacentHTML('beforebegin', XHR.responseText)
-
-      // const parsed = JSON.parse(XHR.responseText)
-      //
-      // if(parsed.notification)
-      //   document.querySelector('.row-videos').insertAdjacentHTML('beforebegin', parsed.notification)
-      // else
-      //   cb(parsed.videos)
-
     }
 
   }
-
-}
-
-/**** **** **** **** **** **** **** ****
- > CALLBACKS
-**** **** **** **** **** **** **** ****/
-
-const done = notification => {
-
-
 
 }
 

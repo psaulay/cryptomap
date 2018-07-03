@@ -4,7 +4,7 @@
 {% block content %}
 
   <div class="home-content">
-    <div class="btn-action">
+    <div class="btn-action flex-wrap" data-toggle="buttons">
       <button type="button" class="btn btn-home">Réinitialiser</button>
       <button type="button" class="btn btn-home">Commerçants</button>
       <button type="button" class="btn btn-home">Distributeurs</button>
@@ -15,6 +15,7 @@
 {% endblock %}
 
 {% block javascripts %}
-  <script src="{{ url('assets/js/lib/leaflet.js') }}"></script>
-  <script src="{{ url('assets/js/main.js') }}"></script>
+      <script src="{{ url('assets/js/lib/leaflet.js') }}"></script>
+      <script src="{{ url('assets/js/main.js') }}"></script>
+      <script src="{{ url('assets/js/navbar.js') }}"></script>
 {% endblock %}
