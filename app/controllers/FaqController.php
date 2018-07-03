@@ -14,10 +14,10 @@ class FaqController extends Controller {
   public function render()
   {
 
-
     echo $this->twig->render('faq.html.twig', [
       
     ]);
+
   }
 
 }

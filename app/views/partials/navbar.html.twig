@@ -10,10 +10,20 @@
     </a>
   </h1>
   <!-- https://fr.m.wikipedia.org/wiki/Fichier:Map_ballonicon2.svg -->
-  <ul>
+  <ul id="ul-nav">
     <li><a href="{{ url('buy') }}">&#10140; Acheter BTC</a></li>
     <li><a href="{{ url('news/twitter') }}">&#10140; News Twitter</a></li>
     <li><a href="{{ url('news/youtube') }}">&#10140; News Youtube</a></li>
     <li><a href="{{ url('faq') }}">&#10140; FAQ</a></li>
   </ul>
+
+  <ul id="ul-mobile">
+    <li><a href="{{ url('buy') }}">&#10140; Acheter BTC</a></li>
+    <li><a href="{{ url('news/twitter') }}">&#10140; News Twitter</a></li>
+    <li><a href="{{ url('news/youtube') }}">&#10140; News Youtube</a></li>
+    <li><a href="{{ url('faq') }}">&#10140; FAQ</a></li>
+  </ul>
+    <div class="logo" id="hamburger">
+    <img id="iHamburger" width="64px" height="64px" src="{{ url('assets/img/menu.png') }}">
+  </div>
 </nav>
