@@ -8,22 +8,22 @@
   <div class="row">
     <div class="header">
       <div class="title">
-
         <h4 class="youtube-title"><img  class="youtube-icon" src="{{ url('assets/icons/youtube/youtube.svg') }}" alt="">L'ACTU YOUTUBE</h4>
       </div>
 
-      <form>
-        <div class="btn-news">
-          <button class="btn hashtag youtube-color" value="bitcoin">#BITCOIN</button>
-          <button class="btn hashtag youtube-color" value="crypto">#CRYPTO</button>
-          <button class="btn hashtag youtube-color" value="blockchain">#BLOCKCHAIN</button>
-          <button class="btn hashtag youtube-color" value="co">#ICO</button>
+        <form>
+          <div class="btn-news">
+            <button class="btn hashtag youtube-color" value="bitcoin">#BITCOIN</button>
+            <button class="btn hashtag youtube-color" value="crypto">#CRYPTO</button>
+            <button class="btn hashtag youtube-color" value="blockchain">#BLOCKCHAIN</button>
+            <button class="btn hashtag youtube-color" value="co">#ICO</button>
+          </div>
         </form>
       </div>
     </div>
 
 
-    <div class="row">
+    <div class="row row-content">
 
       {% include 'partials/videos.html.twig' with videos %}
 

@@ -84,7 +84,7 @@
       z-index: 9999999;
       position: absolute;
       width: 100%;
-      height: 100vh;
+      height: auto;
       top: 100px;
       left: 0;
       background: $primary;
@@ -96,7 +96,7 @@
     .col-content {
       margin-left: -8%;
     }
-    body { 
+    body {
       padding-top: 100px;
     }
 

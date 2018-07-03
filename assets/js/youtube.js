@@ -9,7 +9,9 @@ const eventHashtags = () => {
 
   hashtags.forEach(hashtag => {
 
-    hashtag.addEventListener('click', () => {
+    hashtag.addEventListener('click', e => {
+
+      e.preventDefault()
 
       post(hashtag.value)
 
@@ -36,6 +38,8 @@ const post = data => {
   XHR.onreadystatechange = () => {
 
     if(XHR.readyState === 4 && XHR.status === 200) {
+
+      console.log(XHR.responseText);
 
       const container = document.querySelector('.row-content')
       container.innerHTML = ''
