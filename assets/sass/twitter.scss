@@ -30,7 +30,7 @@
 	font-weight: bold;
 	color: white;
 }
-#hashtag{
+.hashtag{
 	font-weight: bold;
 }
 .a-twitter{
@@ -78,7 +78,7 @@
 }
 h4{	display:inline;
 }
-#hashtag{
+.hashtag{
 	margin-right: 20px;
 }
 .title{
@@ -110,7 +110,7 @@ h4{	display:inline;
 	.btn-news{
 		flex-direction:column;
 	}
-	#hashtag{
+	.hashtag{
 		margin-bottom: 10px;
 		width: 250px;
 		align-self: center;
@@ -135,7 +135,7 @@ h4{	display:inline;
 	.twitter-card{
 		height: 300px;
 	}
-	#hashtag{
+	.hashtag{
 		width: 200px;
 	}
 	h4{
