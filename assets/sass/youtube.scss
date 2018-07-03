@@ -32,7 +32,8 @@
 // }
 
 .youtube-icon {
-	width: 64px;
+		width: 40px;
+	margin-right: 15px;
 }
 
 .transparent {
@@ -42,7 +43,7 @@
 .youtube-title {
 	font-weight: bold;
 	font-size: 2em;
-  color: $youtube;
+  	color: $youtube;
 }
 
 @media (max-width: 1350px) {
@@ -55,6 +56,9 @@
 
 @media (max-width: 1200px) {
 
+	.youtube-title{
+		font-size: 1.2em;
+	}
 	.youtube-card {
 
 	}
@@ -65,7 +69,6 @@
   .youtube-card {
 
 	}
-
 }
 
 @media (max-width: 568px) {
@@ -74,13 +77,9 @@
 
 	}
 
-	.youtube-title{
-		font-size: 1.6em;
-	}
 
 	h4 {
 		font-size:1em;
-		dipslay: block;
 	}
 
 	p {
@@ -91,20 +90,22 @@
 
 @media (max-width: 370px) {
 
-	.youtube-icon {
-  	width: 100%;
-  }
 
 	.youtube-card {
 		height: 330px;
 	}
 
 	.youtube-title {
-		font-size: 1.2em;
+		font-size: 1.1em;
 	}
 
 	p {
 		font-size: 0.875em;
 	}
 
+}
+@media (max-width: 308px){
+	.youtube-title{
+		font-size: 1em;
+	}
 }
