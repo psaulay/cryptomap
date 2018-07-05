@@ -9,7 +9,7 @@
 
 - path:
   - /news/twitter
-  controller: Controllers\TwitterController::getTweets
+  controller: Controllers\TwitterController::render
 
 - path:
   - /news/youtube

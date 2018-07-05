@@ -20,7 +20,7 @@ class YoutubeController extends Controller {
 
       echo $this->twig->render('news/youtube.html.twig', [
         'videos' => $this->getVideos('bitcoin%20fr')
-      ]);
+      ]); 
 
     } else {
 
