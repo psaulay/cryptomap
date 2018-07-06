@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Core\Controllers\Controller;
+use Controllers\MarqueeController as Marquee;
 
 class HomeController extends Controller {
 
@@ -18,7 +19,7 @@ class HomeController extends Controller {
 
 
       echo $this->twig->render('home.html.twig', [
-
+        'currencies' => Marquee::getMarquee()
         
       
         ]);
@@ -89,6 +90,7 @@ class HomeController extends Controller {
     $datas = $datas->data;
     $datas = $datas->places; 
     return $datas[0]->buy_local_url;
+
   }
 
 

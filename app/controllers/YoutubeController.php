@@ -5,6 +5,7 @@ namespace Controllers;
 use Core\Controllers\Controller;
 use Core\Helpers\Validator;
 use Core\Helpers\Notificator;
+use Controllers\MarqueeController as Marquee;
 
 class YoutubeController extends Controller {
 
@@ -20,7 +21,7 @@ class YoutubeController extends Controller {
 
       echo $this->twig->render('news/youtube.html.twig', [
         'videos' => $this->getVideos('bitcoin%20fr')
-      ]);
+      ]); 
 
     } else {
 
@@ -33,7 +34,8 @@ class YoutubeController extends Controller {
         Notificator::notify($this->twig, 'danger', 'Désolé, l\'hashtag '.$hashtag.' n\'est pas disponible.');
 
       echo $this->twig->render('partials/videos.html.twig', [
-        'videos' => $this->getVideos($hashtag.'%20fr')
+        'videos' => $this->getVideos($hashtag.'%20fr'),
+        'currencies' => Marquee::getMarquee()
       ]);
 
     }

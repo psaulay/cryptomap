@@ -4,13 +4,13 @@
   - /buy
   controller: Controllers\HomeController::render
 
-# - path:
-#   - /buy
-#   controller: Controllers\LocalbitcoinsController::index
+- path:
+  - /marquee
+  controller: Controllers\MarqueeController::update
 
 - path:
   - /news/twitter
-  controller: Controllers\TwitterController::getTweets
+  controller: Controllers\TwitterController::render
 
 - path:
   - /news/youtube

@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Core\Controllers\Controller;
+use Controllers\MarqueeController as Marquee;
 
 class FaqController extends Controller {
 
@@ -15,7 +16,7 @@ class FaqController extends Controller {
   {
 
     echo $this->twig->render('faq.html.twig', [
-      
+      'currencies' => Marquee::getMarquee()
     ]);
 
   }

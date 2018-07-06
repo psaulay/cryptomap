@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
     <link rel="stylesheet" href="{{ url('assets/css/lib/leaflet.css') }}">
     <link rel="stylesheet" href="{{ url('assets/css/dist/main.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/dist/partials/marquee.css') }}">
   {% endblock %}
 
   <title>{% block title %}Crytpomap{% endblock %}</title>
@@ -28,19 +29,12 @@
         </div>
       </div>
     </div>
-    <marquee id="marquee">
-      <span><img class="imarquee" src="{{ url('assets/icons/currencies/btc.svg') }}"> 5252,25€ -1,37%</span>
-      <span><img class="imarquee" src="{{ url('assets/icons/currencies/eth.svg') }}"> 373,70€ -3,32%</span>
-      <span><img class="imarquee" src="{{ url('assets/icons/currencies/btc.svg') }}"> 5252,25€ -1,37%</span>
-      <span><img class="imarquee" src="{{ url('assets/icons/currencies/eth.svg') }}"> 373,70€ -3,32%</span>
-      <span><img class="imarquee" src="{{ url('assets/icons/currencies/btc.svg') }}"> 5252,25€ -1,37%</span>
-      <span><img class="imarquee" src="{{ url('assets/icons/currencies/eth.svg') }}"> 373,70€ -3,32%</span>
-      <span><img class="imarquee" src="{{ url('assets/icons/currencies/btc.svg') }}"> 5252,25€ -1,37%</span>
-      <span><img class="imarquee" src="{{ url('assets/icons/currencies/eth.svg') }}"> 373,70€ -3,32%</span>
-    </marquee>
+    {% include "partials/marquee.html.twig" %}
 
     {% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
       <script src="{{ url('assets/js/navbar.js') }}"></script>
+      <script src="{{ url('assets/js/marquee.js') }}"></script>
     {% endblock %}
   </body>
   </html>
