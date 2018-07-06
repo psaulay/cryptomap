@@ -4,10 +4,11 @@
 {% block content %}
 
   <div class="home-content">
-    <div class="btn-action flex-wrap" data-toggle="buttons">
-      <button type="button" class="btn btn-home">Réinitialiser</button>
-      <button type="button" class="btn btn-home">Commerçants</button>
-      <button type="button" class="btn btn-home">Distributeurs</button>
+    <div class="btn-action flex-wrap">
+      <button class="btn btn-home bitcoin" value="cash">Achat cash</button>
+      <button class="btn btn-home bitcoin" value="shop">Commerçants</button>
+      <button class="btn btn-home bitcoin" value="atm">Distributeurs</button>
+      <button class="btn btn-home bitcoin" value="reset">Réinitialiser</button>
     </div>
      <div id="map"></div>
   </div>
@@ -15,7 +16,10 @@
 {% endblock %}
 
 {% block javascripts %}
-      <script src="{{ url('assets/js/lib/leaflet.js') }}"></script>
-      <script src="{{ url('assets/js/main.js') }}"></script>
-      <script src="{{ url('assets/js/navbar.js') }}"></script>
+
+  {{ parent() }}
+  <script src="{{ url('assets/js/lib/leaflet.js') }}"></script>
+  <script src="{{ url('assets/js/main.js') }}"></script>
+  <script src="{{ url('assets/js/buy.js') }}"></script>
+  
 {% endblock %}
