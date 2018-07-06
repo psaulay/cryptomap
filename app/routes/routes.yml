@@ -1,15 +1,12 @@
 
 - path:
   -
+  - /buy
   controller: Controllers\HomeController::render
 
 - path:
   - /marquee
   controller: Controllers\MarqueeController::update
-
-- path:
-  - /buy
-  controller: Controllers\LocalbitcoinsController::index
 
 - path:
   - /news/twitter
