@@ -1,19 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{{ url('') }}">TODO µ.MVC</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('') }}">Todos</a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('categories') }}">Categories</a>
-            </li>
-        </ul>
-    </div>
+<nav class="navbar-left">
+  <div class="logo">
+    <img width="64px" height="64px"
+     src="{{ url('assets/img/logo.png') }}">
+  </div>
+  <h1>
+    <a class="navbar-brand" href="{{ url('') }}">
+      Cryptomap
+    </a>
+  </h1>
+  <!-- https://fr.m.wikipedia.org/wiki/Fichier:Map_ballonicon2.svg -->
+  <ul id="ul-nav">
+    <li><a href="{{ url('buy') }}">&#10140; Acheter BTC</a></li>
+    <li><a href="{{ url('news/twitter') }}">&#10140; News Twitter</a></li>
+    <li><a href="{{ url('news/youtube') }}">&#10140; News Youtube</a></li>
+    <li><a href="{{ url('faq') }}">&#10140; FAQ</a></li>
+  </ul>
+
+  <ul id="ul-mobile">
+    <li><a href="{{ url('buy') }}">&#10140; Acheter BTC</a></li>
+    <li><a href="{{ url('news/twitter') }}">&#10140; News Twitter</a></li>
+    <li><a href="{{ url('news/youtube') }}">&#10140; News Youtube</a></li>
+    <li><a href="{{ url('faq') }}">&#10140; FAQ</a></li>
+  </ul>
+    <div class="logo" id="hamburger">
+    <img id="iHamburger" width="64px" height="64px" src="{{ url('assets/img/menu.png') }}">
+  </div>
+  <h5 style="margin-top:50%">Donations</h5>
+  <img src="http://localhost/cryptomapp/assets/img/btcQR.png" style="padding:5%;heigth:auto;width:50%"><img src="http://localhost/cryptomapp/assets/img/ethQR.png" style="padding:5%;heigth:auto;width:50%">
+  <p style="font-size:11px">BTC : 1PttavEYDjPBgk9EWKg3qL9x1DoTdqPbF3</p>
+  <p style="font-size:10px">ETH : 0x9b21F40EC85E11B88703E6C9Ed499Bb9a2cbEFFB</p>
 </nav>

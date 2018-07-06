@@ -1,3 +1,103 @@
-.navbar {
-    margin-bottom: 20px;
+
+@import '../variables';
+
+.navbar-left {
+  position: fixed;
+  width: 16.66667%;
+  height: 100%;
+  background: $primary;
 }
+
+.navbar-left .logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.navbar-left > h1 {
+  margin-top: 16px;
+  text-align: center;
+  font-family: 'Galada', cursive;
+  font-weight: bold;
+}
+
+.navbar-left > h1 > a {
+  font-size: 1.9rem;
+  color: $strongText;
+}
+
+.navbar-brand {
+  margin-right: 0
+}
+
+.navbar-left > ul > li {
+  margin: 32px 0;
+  list-style: none;
+}
+
+.navbar-left > ul > li > a {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 1.3rem;
+  color: $strongText;
+}
+
+.navbar-left > ul > li > a:hover {
+  color: #0a0a0a;
+}
+
+.navbar-left > ul > li > a:hover {
+  text-decoration: none;
+}
+
+#hamburger, #ul-mobile {
+  display: none;
+}
+
+/**** **** **** **** **** **** **** ****
+  > MEDIA QUERIES
+  **** **** **** **** **** **** **** ****/
+
+  @media (max-width: 992px) {
+
+    .navbar-left {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      position: fixed;
+      width: 100%;
+      height: 100px;
+      top: 0;
+      left: 0;
+      background: $primary;
+      z-index: 9999999;
+    }
+
+    #ul-nav  {
+      display: none;
+    }
+
+    #hamburger {
+      display: block;
+    }
+
+    #ul-mobile {
+      z-index: 9999999;
+      position: absolute;
+      width: 100%;
+      height: auto;
+      top: 100px;
+      left: 0;
+      background: $primary;
+      border-top: 1px solid white;
+    }
+    .navbar-left > ul > li > a{
+      font-size: 1.1em;
+    }
+    .col-content {
+      margin-left: -8%;
+    }
+    body {
+      padding-top: 100px;
+    }
+
+  }
