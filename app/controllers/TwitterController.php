@@ -15,12 +15,15 @@ class TwitterController extends Controller {
      * @param string $page
      * @return void
      */
-    public function getTweets() 
-    {   
-        $comsumer_key = 'EzXcLMys0gtr2amIXEckXxZua';
-        $consumer_secret = 'EeS18r9rrAy7DZNEyprFQSrXUlKcIUYOF6liwZUKWciqB5zhvE';
-        $access_token = '969560599075196928-gwOVyp9crxbwRC2XlczMJSGiHc2W9iT';
-        $access_token_secret = 'dyRJAkiC5F0k38tFhqA9WYfvvzmQXGcxIiHKb7AtBBO0o';
+    public function getTweets()
+    {
+
+        $config = require('./config.php');
+
+        $comsumer_key = $config['twitter']['consumer_key'];
+        $consumer_secret = $config['twitter']['consumer_secret'];
+        $access_token = $config['twitter']['access_token'];
+        $access_token_secret = $config['twitter']['access_token_secret'];
 
         if (isset($_POST['hashtag'])) {
            $hashtag = htmlspecialchars($_POST['hashtag']);
@@ -59,4 +62,3 @@ class TwitterController extends Controller {
 
 }
 }
-
