@@ -1,10 +1,11 @@
+
 const hamburger = document.querySelector('#iHamburger')
 
 hamburger.addEventListener('click', e => {
 
-  const   ulMobile = document.querySelector('#ul-mobile')
-        , display  = window.getComputedStyle(ulMobile).getPropertyValue('display')
+  const   mobile  = document.querySelector('#mobile')
+        , display = window.getComputedStyle(mobile).getPropertyValue('display')
 
-  display === 'block' ? ulMobile.style.display = 'none' : ulMobile.style.display = 'block'
+  display === 'block' ? mobile.style.display = 'none' : mobile.style.display = 'block'
 
 })

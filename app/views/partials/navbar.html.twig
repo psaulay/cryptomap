@@ -2,7 +2,7 @@
 <nav class="navbar-left">
   <div class="logo">
     <img width="64px" height="64px"
-     src="{{ url('assets/img/logo.png') }}">
+    src="{{ url('assets/img/logo.png') }}">
   </div>
   <h1>
     <a class="navbar-brand" href="{{ url('') }}">
@@ -14,18 +14,34 @@
     <li><a href="{{ url('news/twitter') }}">&#10140; News Twitter</a></li>
     <li><a href="{{ url('news/youtube') }}">&#10140; News Youtube</a></li>
     <li><a href="{{ url('faq') }}">&#10140; FAQ</a></li>
+    <li>
   </ul>
 
-  <ul id="ul-mobile">
-    <li><a href="{{ url('news/twitter') }}">&#10140; News Twitter</a></li>
-    <li><a href="{{ url('news/youtube') }}">&#10140; News Youtube</a></li>
-    <li><a href="{{ url('faq') }}">&#10140; FAQ</a></li>
-  </ul>
+  <div id="donations">
+    <h5>Donations</h5>
+    <img class="donate-img" src="{{ url('assets/img/btcQR.png') }}">
+    <p>1PttavEYDjPBgk9EWKg3qL9x1DoTdqPbF3</p>
+    <img class="donate-img" src="{{ url('assets/img/ethQR.png') }}">
+    <p>0x9b21F40EC85E11B88703E6C9Ed499Bb9a2cbEFFB</p>
+  </div>
+
+  <div id="mobile">
+    <ul id="ul-mobile">
+      <li><a href="{{ url('news/twitter') }}">&#10140; News Twitter</a></li>
+      <li><a href="{{ url('news/youtube') }}">&#10140; News Youtube</a></li>
+      <li><a href="{{ url('faq') }}">&#10140; FAQ</a></li>
+    </ul>
+    <div id="donations-mobile">
+      <h5>Donations</h5>
+      <img class="donate-img-mobile" src="{{ url('assets/img/btcQR.png') }}">
+      <p>1PttavEYDjPBgk9EWKg3qL9x1DoTdqPbF3</p>
+      <img class="donate-img-mobile" src="{{ url('assets/img/ethQR.png') }}">
+      <p>0x9b21F40EC85E11B88703E6C9Ed499Bb9a2cbEFFB</p>
+    </div>
+  </div>
+
   <div class="logo" id="hamburger">
     <img id="iHamburger" width="64px" height="64px" src="{{ url('assets/img/menu.png') }}">
   </div>
-  <h5 style="margin-top:50%">Donations</h5>
-  <img src="{{ url('assets/img/btcQR.png') }}" style="padding:5%;heigth:auto;width:50%"><img src="{{ url('assets/img/ethQR.png') }}" style="padding:5%;heigth:auto;width:50%">
-  <p style="font-size:11px">BTC : 1PttavEYDjPBgk9EWKg3qL9x1DoTdqPbF3</p>
-  <p style="font-size:10px">ETH : 0x9b21F40EC85E11B88703E6C9Ed499Bb9a2cbEFFB</p>
+
 </nav>
