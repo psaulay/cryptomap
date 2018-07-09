@@ -13,16 +13,13 @@ class HomeController extends Controller {
    * @return void
    */
   public function render()
-  { 
+  {
 
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
-
       echo $this->twig->render('home.html.twig', [
         'currencies' => Marquee::getMarquee()
-        
-      
-        ]);
+      ]);
 
     }else{
 
@@ -34,12 +31,12 @@ class HomeController extends Controller {
           $this->buyCash();
           break;
 
-        case 'atm' : 
+        case 'atm' :
           //////appeller la function distributeur
 
           break;
 
-        case 'shop' : 
+        case 'shop' :
           /// appeller la function comerçant
           break;
 
@@ -51,35 +48,35 @@ class HomeController extends Controller {
 
         default :
         $this->buyCash();
-        
-        
+
+
       }
 
     }
 
   }
 
- 
-  public function buyCash() 
+
+  public function buyCash()
   {
-    
+
     $lat = 46.2276;
     $lon = 2.2137;
     $url = $this->localBitcoinUrl($lat, $lon);
-    $data = $this->LocateBitcoins($url);   
+    $data = $this->LocateBitcoins($url);
     echo json_encode(['data' => $data,'kind'=> 'cash']);
-              
+
   }
 
-  //this function return informations about person want to sell bitcoins 
+  //this function return informations about person want to sell bitcoins
 
-  public function LocateBitcoins($url) 
-  {             
-      
+  public function LocateBitcoins($url)
+  {
+
     $datas = json_decode(file_get_contents($url));
     $datas = $datas->data;
     return $datas->ad_list;
-    
+
   }
 
   public function localBitcoinUrl ($lat, $lon){
@@ -88,12 +85,10 @@ class HomeController extends Controller {
     $url = 'https://localbitcoins.com/api'.$api_endpoint;
     $datas = json_decode(file_get_contents($url));
     $datas = $datas->data;
-    $datas = $datas->places; 
+    $datas = $datas->places;
     return $datas[0]->buy_local_url;
 
   }
 
 
 }
-
-

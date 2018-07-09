@@ -1,50 +1,50 @@
-body{
-  //overflow:hidden; 
-}
-.slider{
+
+.marquee {
   z-index: 4;
-    width:100%;
-    //overflow:hidden;
-    position:relative;
-    margin:0;
-}
-.edge{
-    left:0;
-    right:0;
-    top:0;
-    bottom:0;
-    position:absolute;
-    height:100%;
-    display:block;
-}
-.edge:before{
-    content:'';
-    position:absolute;
-    left:0;
-    background:-webkit-linear-gradient(left, white 10%, rgba(0,0,0,0) 100%);
-    width:30%;
-    height:100%;
-}
-.edge:after{
-    content:'';
-    position:absolute;
-    right:0;
-    background:-webkit-linear-gradient(right, white 10%, rgba(0,0,0,0) 100%);
-    width:30%;
-    height:100%;
-}
-.slideContainer{
-    background:#ddd;
-    overflow:hidden;
-    height:25px;
-    width:1000%;
-    margin:0;
-}
-.slideItem{
-    list-style:none;
-    display:inline-flex;
-    padding-left: 10px;
-    padding-right: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
+.edge {
+  position:absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  display: block;
+}
 
+.edge:before {
+  content: '';
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  left: 0;
+  background: -webkit-linear-gradient(left, white 10%, rgba(0,0,0,0) 100%);
+}
+
+.edge:after {
+  content: '';
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  right: 0;
+  background: -webkit-linear-gradient(right, white 10%, rgba(0,0,0,0) 100%);
+}
+
+.currencies {
+  height: 25px;
+  margin: 0;
+  background: #ddd;
+}
+
+.currency {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}

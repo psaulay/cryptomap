@@ -7,12 +7,12 @@ use Controllers\MarqueeController as Marquee;
 
 class MarqueeController extends Controller {
 
-  public function update() 
+  public function update()
   {
     echo json_encode(['currencies' => $this->getMarquee()]);
   }
 
-  public static function getMarquee() 
+  public static function getMarquee()
   {
 
     $url = 'https://api.coinmarketcap.com/v2/ticker/?convert=EUR';
@@ -29,10 +29,10 @@ class MarqueeController extends Controller {
       $currency['percent'] = $answer->quotes->EUR->percent_change_24h.'%';
       array_push($currencies, $currency);
       if ($i == 11){ break; }
-      
+
     }
     return $currencies;
-    
+
   }
 
 }

@@ -35,21 +35,32 @@ const post = data => {
 
   XHR.send(`hashtag=${data}`)
 
+  const loading = document.querySelector('#loading')
+
+  loading.style.display = 'block'
+
   XHR.onreadystatechange = () => {
 
     if(XHR.readyState === 4 && XHR.status === 200) {
 
-      console.log(XHR.responseText);
+      // console.log(XHR.responseText)
 
-      const container = document.querySelector('.row-content')
-      container.innerHTML = ''
-      container.innerHTML = XHR.responseText
+      setTimeout(() => {
+
+        loading.style.display = 'none'
+
+        const container = document.querySelector('.row-videos')
+        container.innerHTML = ''
+        container.innerHTML = XHR.responseText
+
+      }, 1000)
 
     }
 
   }
 
 }
+
 
 /**** **** **** **** **** **** **** ****
  > INIT

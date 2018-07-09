@@ -58,8 +58,8 @@
 	border: 1px solid black;
 }
 .message {
-	position: fixed;
-	top: 50vh;
+	position: relative;
+	margin-top: 50px;
 	font-weight: bold;
 	font-size: 1.5em;
 }
@@ -167,9 +167,3 @@ h4{	display:inline;
 		font-size: 1em;
 	}
 }
-@media (max-height: 670px) {
-	.message{
-		top: 70vh;
-		font-size: 1.1em;
-	}
-}    

@@ -70,11 +70,13 @@ class YoutubeController extends Controller {
   private function getVideos($query)
   {
 
+    $config = require('./config.php');
+
     $base_url   = 'https://www.googleapis.com/youtube/v3/search?part=snippet';
     $maxResults =  15;
     $order      = 'date';
     $langage    = 'fr';
-    $key        = 'AIzaSyAV9eb5jfZUHg0XPuwzo2zRS_Kwimlz4mg';
+    $key        = $config['youtube'];
 
     $url = $base_url.'&q='.$query.'&maxResults='.$maxResults.'&regionCode=FR&relevanceLanguage='.$langage.'&order='.$order.'&safeSearch=none&key='.$key;
 

@@ -1,27 +1,44 @@
 
+window.requestAnimationFrame = (function() {
 
-    // polyfill
-    window.requestAnimationFrame = (function(){
-        return  window.requestAnimationFrame       ||
-                window.webkitRequestAnimationFrame ||
-                window.mozRequestAnimationFrame    ||
-                function( callback ){
-                    window.setTimeout(callback, 1000 / 60);
-                };
-        })();
-    
-        var speed = 5000;
-        (function currencySlide(){
-            var currencyPairWidth = $('.slideItem:first-child').outerWidth();
-            $(".slideContainer").animate({marginLeft:-currencyPairWidth},speed, 'linear', function(){
-                        $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));
-                });
-                requestAnimationFrame(currencySlide);
-        })();
+  return  window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame ||
+  function( callback ){
+  window.setTimeout(callback, 1000 / 60);
+  };
 
+})()
+
+const speed = 5000;
+
+(function currencyMarquee() {
+
+  const currencyWidth = $('.currency:first-child').outerWidth()
+
+  $(".currencies").animate({
+
+    marginLeft: -currencyWidth
+
+  }, speed, 'linear', function() {
+
+    $(this).css({ marginLeft: 0 }).find("li:last").after($(this).find("li:first"))
+
+  })
+
+  requestAnimationFrame(currencyMarquee)
+
+})()
+
+// var speed = 5000;
+// (function currencySlide(){
+//   var currencyPairWidth = $('.currency:first-child').outerWidth();
+//   $(".currencies").animate({marginLeft:-currencyPairWidth},speed, 'linear', function(){
+//   $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));
+//   });
+//   requestAnimationFrame(currencySlide);
+//
+// })();
 
 function showCurrencies() {
-
     $.ajax({
 
         url : 'http://localhost/cryptomap/marquee',
@@ -73,9 +90,9 @@ function showCurrencies() {
             */
 
 
-        
+
         } ,
-    
+
     })
 
 }
