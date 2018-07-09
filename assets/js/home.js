@@ -15,8 +15,8 @@ const tile = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?a
 })
 
 const map = L.map('map')
-              .setView([46.757903, 2.787052], 6)
-              .addLayer(tile)
+.setView([46.757903, 2.787052], 6)
+.addLayer(tile)
 
 const eventBitcoin = function() {
 
@@ -38,9 +38,9 @@ const eventBitcoin = function() {
 
 /**** **** **** **** **** **** **** ****
  > POST
-**** **** **** **** **** **** **** ****/
+ **** **** **** **** **** **** **** ****/
 
-const post = data => {
+ const post = data => {
 
   const XHR = new XMLHttpRequest()
 
@@ -51,32 +51,32 @@ const post = data => {
   XHR.send(`request=${data}`)
 
   XHR.onreadystatechange = () => {
-  
+
     if(XHR.readyState === 4 && XHR.status === 200) {
 
       removeAllMarkers()
-            
+
       switch (JSON.parse(XHR.responseText).kind) {
 
         case "all":
-          displayALL(JSON.parse(XHR.responseText))
-          break;
+        displayALL(JSON.parse(XHR.responseText))
+        break;
 
         case "cash" :
-          displayCASH(JSON.parse(XHR.responseText).data)
-          break;
+        displayCASH(JSON.parse(XHR.responseText).data)
+        break;
 
         case "atm" :
-          displayATM(JSON.parse(XHR.responseText).data)
-          break;
+        displayATM(JSON.parse(XHR.responseText).data)
+        break;
 
         case "venue" : 
-          displayVENUES(JSON.parse(XHR.responseText).data)
-          break;
+        displayVENUES(JSON.parse(XHR.responseText).data)
+        break;
 
         case "reset" :
-          displayALL(JSON.parse(XHR.responseText))
-          break;
+        displayALL(JSON.parse(XHR.responseText))
+        break;
 
         default: alert('Désolé, une erreur s\est produite.')
 
@@ -111,24 +111,24 @@ function displayALL(data) {
 function displayCASH(data) {
 
   data.forEach(element => {
-    
+
     let lat = element.data.lat;
 
     let lon = element.data.lon;
 
     let username = element.data.profile.username;
-      
+
     let price = element.data.temp_price;
 
     //if we need the min amount or max amount
     // let min = element.data.min_amount;
     // let max = element.data.max_amount;
-      
+
     let url = element.actions.public_view; 
-      
+
     let marker = addMarker(lat, lon, 'cash');
 
-    marker.bindPopup(username + '<br>'+ price +'<br>' +'<a href='+url+' onclick="window.open(this.href); return false;">'+url +' </a>' );
+    marker.bindPopup(username + '<br>'+ price +'€ /BTC<br>' +'<a href='+url+' onclick="window.open(this.href); return false;">'+url +' </a>' );
 
   })
 
@@ -137,17 +137,17 @@ function displayCASH(data) {
 function displayATM(data) {
 
   data.forEach(element => {
-         
+
     let lat = element.atm_lat;
     
     let lon = element.atm_lon;
 
     let atmName = element.atm_name;
-      
+
     let atm_add = element.atm_adress;
-      
+
     let acceptedCur = element.atm_currency;
-  
+
     let marker = addMarker(lat, lon, 'atm');
 
     marker.bindPopup(atmName + '<br>'+ acceptedCur +'<br>' +atm_add);
@@ -196,9 +196,30 @@ function addMarker(lat, lon, type){
     iconAnchor: [22, 50],
     popupAnchor: [-3, -76]
   })
- 
+
   let marker = L.marker([lat, lon],{icon: myIcon}).addTo(map);
 
   return marker;
 
 }
+
+let full = document.getElementById('full');
+full.addEventListener('click', e => {
+
+  e.preventDefault()
+
+  let btn = document.getElementById('btn-action');
+  let display = window.getComputedStyle(btn).getPropertyValue('display');
+
+  display === 'flex' ? btn.style.display = 'none' : btn.style.display = 'flex';
+
+  if (full.src === "http://localhost/cryptomap/assets/img/full-screen.png") {
+
+    full.src = "http://localhost/cryptomap/assets/img/minimize.png";
+
+  }else{
+
+   full.src = "http://localhost/cryptomap/assets/img/full-screen.png";
+   
+ }
+})

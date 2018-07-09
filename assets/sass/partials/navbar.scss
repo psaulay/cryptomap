@@ -80,7 +80,7 @@
   word-break: break-all;
 }
 
-#hamburger, #mobile {
+#hamburger, #mobile, #full {
   display: none;
 }
 
@@ -101,6 +101,16 @@
       left: 0;
       background: $primary;
       z-index: 9999999;
+    }
+
+    #full{
+      display: block;
+      width:30px;
+      height:30px;
+      margin-right: 5px;
+      position:fixed;
+      top:60px;
+      right:45%;
     }
 
     #ul-nav, #donations {
