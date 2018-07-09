@@ -2,31 +2,33 @@
 
 {% block content %}
 
-<div class="container col-lg-10 mt-3">
-  <div class="row">
-    <div class="header">
-      <div class="title">
+  <div class="container col-lg-10 mt-3">
+    <div class="row">
+      <div class="header">
+        <div class="title">
 
-      <h4 class="twitter-title"><img  class="twitter-icon" src="{{ url('assets/icons/twitter/twitter-blue.svg') }}" alt="">L'ACTU TWITTER</h4>
-      </div>
-
-      <form>
-        <div class="btn-news">
-          <button name="hashtag" class="btn bleu hashtag" value="bitcoin">#BITCOIN</button>
-          <button name="hashtag" class="btn bleu hashtag" value="crypto">#CRYPTO</button>
-          <button name="hashtag" class="btn bleu hashtag" value="blockchain">#BLOCKCHAIN</button>
-          <button name="hashtag" class="btn bleu hashtag" value="ICO">#ICO</button>
+          <h4 class="twitter-title"><img class="twitter-icon" src="{{ url('assets/icons/twitter/twitter-blue.svg') }}" alt="">L'ACTU TWITTER</h4>
         </div>
-      </form>
+
+        <form>
+          <div class="btn-news">
+            <button name="hashtag" class="btn bleu hashtag" value="bitcoin">#BITCOIN</button>
+            <button name="hashtag" class="btn bleu hashtag" value="crypto">#CRYPTO</button>
+            <button name="hashtag" class="btn bleu hashtag" value="blockchain">#BLOCKCHAIN</button>
+            <button name="hashtag" class="btn bleu hashtag" value="ICO">#ICO</button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
 
-  <div class="row content">
+    <div class="row content">
+      <div class="overlay"></div>
 
-   {% include 'partials/tweets.html.twig' with statuses.statuses %}
+     {% include 'partials/tweets.html.twig' with statuses.statuses %}
 
-  </div>
-</div>
+   </div>
+ </div>
+
 
 {% endblock %}
 
