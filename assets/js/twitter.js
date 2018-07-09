@@ -34,10 +34,6 @@ const post = data => {
       container.innerHTML = ''
       container.innerHTML = XHR.responseText
 
-    }else{
-      
-      const container = document.querySelector('.content')
-
     }
 
   }

@@ -16,10 +16,7 @@
 {% endblock %}
 
 {% block javascripts %}
-
-  {{ parent() }}
-  <script src="{{ url('assets/js/lib/leaflet.js') }}"></script>
-  <script src="{{ url('assets/js/main.js') }}"></script>
-  <script src="{{ url('assets/js/buy.js') }}"></script>
-  
+    {{ parent() }}
+      <script src="{{ url('assets/js/lib/leaflet.js') }}"></script>
+      <script src="{{ url('assets/js/main.js') }}"></script>
 {% endblock %}
