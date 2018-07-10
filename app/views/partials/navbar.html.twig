@@ -27,13 +27,13 @@
     <li>
   </ul>
 
-  <!-- <div class="coinmarketcap-currency-widget"
+  <div id="widget" class="coinmarketcap-currency-widget"
     data-currencyid="1" data-base="EUR"
     data-secondary="" data-ticker="false"
     data-rank="false" data-marketcap="false"
     data-volume="false" data-stats="USD"
     data-statsticker="false">
-  </div> -->
+  </div>
 
   <div id="donations">
     <h5>Donations</h5>
@@ -45,10 +45,17 @@
 
   <div id="mobile">
     <ul id="ul-mobile">
-      <li><a href="{{ url('news/twitter') }}">&#10140; News Twitter</a></li>
-      <li><a href="{{ url('news/youtube') }}">&#10140; News Youtube</a></li>
+      <li><a href="{{ url('news/twitter') }}">&#10140; Actu Twitter</a></li>
+      <li><a href="{{ url('news/youtube') }}">&#10140; Actu Youtube</a></li>
       <li><a href="{{ url('faq') }}">&#10140; FAQ</a></li>
     </ul>
+    <div id="widget-mobile" class="coinmarketcap-currency-widget"
+      data-currencyid="1" data-base="EUR"
+      data-secondary="" data-ticker="false"
+      data-rank="false" data-marketcap="false"
+      data-volume="false" data-stats="USD"
+      data-statsticker="false">
+    </div>
     <div id="donations-mobile">
       <h5>Donations</h5>
       <img class="donate-img-mobile" src="{{ url('assets/img/btcQR.png') }}">

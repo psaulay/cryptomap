@@ -104,7 +104,7 @@
               maxDecimalPlaces: 2
           }), valTickerHTML = m ? "(" + a + ")" : "", valPrice = n ? P(n, i) : "?", valPercentHTML = l ? '<span style="color:' + b + '">(' + l + "%)" : "", valMarketCap = s ? k(s, 2) : "?", valVolume = d ? k(d, 2) : "?", o ? (mainLineHeight = 25, valPriceSecondary = c ? P(c, o) : "?", secondaryHTML = '<br><span style="font-size: 12px; color: rgba(39, 52, 64, 0.5)">' + valPriceSecondary + " " + o + " </span>") : (mainLineHeight = 30, secondaryHTML = "");
           var y = "utm_medium=widget&utm_campaign=cmcwidget&utm_source=" + location.hostname + "&utm_content=" + e
-              w = '<div style="border:2px solid #e1e5ea;border-radius: 10px;font-family: \'Helvetica Neue\',Helvetica,Arial,sans-serif;min-width:285px;color: rgba(23, 24, 27, 0.85);">    <div>        <div style="float:right;width:67%;border: none;text-align:left;padding:5px 0px;line-height:' + mainLineHeight + 'px;">            <span style="font-size: 18px;"><a href="http://coinmarketcap.com/currencies/' + e + "/?" + y + '" target="_blank">' + t + " " + valTickerHTML + '</a></span> <br>            <span style="font-size: 16px;">' + valPrice + " " + i + " " + valPercentHTML + "</span></span>            " + secondaryHTML + '        </div>        <div style="text-align:center;padding:5px 0px;width:33%;"><img src="' + x + '"></div>    </div>';
+              w = '<div style="">    <div>        <div class="btc-widget" style="">  <img src="' + x + '" style="width:40px">          <span style="font-size: 18px;"></span> <br>            <span style="font-size: 16px;text-align:center">' + valPrice + " " + i + "<br>" + valPercentHTML + "</span></span>            " + secondaryHTML + '        </div>            </div>';
           return w += function(e, t, a, i, r, n, o, c) {
               var l = 0,
                   s = 0,
@@ -115,8 +115,8 @@
               1 == l && (s = 100), 2 == l && (s = 49.8), 3 == l && (s = 33), e && (borderWidth = 0, (a || t) && (borderWidth = 1), d = '                    <div style="text-align:center;float:left;width:' + s + "%;font-size:12px;padding:12px 0;border-right:" + borderWidth + 'px solid #e1e5ea;line-height:1.25em;">                        RANK                        <br><br>                        <span style="font-size: 17px; ">' + n + "</span>                    </div>");
               a && (borderWidth = 0, t && (borderWidth = 1), p = '                    <div style="text-align:center;float:left;width:' + s + "%;font-size:12px;padding:12px 0 16px 0;border-right:" + borderWidth + 'px solid #e1e5ea;line-height:1.25em;">                        MARKET CAP                        <br><br>                        <span style="font-size: 14px; ">' + C(r, o, i) + "</span>                    </div>");
               t && (m = '                    <div style="text-align:center;float:left;width:' + s + '%;font-size:12px;padding:12px 0 16px 0;line-height:1.25em;">                        VOLUME (24H)                        <br><br>                        <span style="font-size: 14px; ">' + C(r, c, i) + "</span>                    </div>");
-              return detailedHTML = '<div style="border-top: 1px solid #e1e5ea;clear:both;">' + d + p + m + "</div>", detailedHTML
-          }(u, h, g, v, r, p, valMarketCap, valVolume), w += '    <div style="border-top: 1px solid #e1e5ea;text-align:center;clear:both;font-size:10px;font-style:italic;padding:5px 0;"></div></div>'
+              return detailedHTML = '<div style="">' + d + p + m + "</div>", detailedHTML
+          }(u, h, g, v, r, p, valMarketCap, valVolume), w += '    <div style=""></div></div>'
       }
       e(document).ready(function(M) {
           M(".coinmarketcap-currency-widget").each(function() {
