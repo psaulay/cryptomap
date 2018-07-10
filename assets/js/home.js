@@ -70,9 +70,9 @@ const eventBitcoin = function() {
         displayATM(JSON.parse(XHR.responseText).data)
         break;
 
-        case "venue" : 
-        displayVENUES(JSON.parse(XHR.responseText).data)
-        break;
+        case "venue" :
+          displayVENUES(JSON.parse(XHR.responseText).data)
+          break;
 
         case "reset" :
         displayALL(JSON.parse(XHR.responseText))
@@ -139,7 +139,7 @@ function displayATM(data) {
   data.forEach(element => {
 
     let lat = element.atm_lat;
-    
+
     let lon = element.atm_lon;
 
     let atmName = element.atm_name;
@@ -165,11 +165,11 @@ function displayVENUES(data) {
     let lon = element.venue_lon;
 
     let venueName = element.venue_name;
-    
+
     let venue_add = element.venue_adress;
-    
+
     let venueCategory = element.venue_category;
-    
+
     let marker = addMarker(lat, lon, 'venue');
 
     marker.bindPopup(venueName + '<br>'+ venueCategory +'<br>' +venue_add);

@@ -3,7 +3,7 @@
 {% block content %}
 
   <div class="container col-lg-10 mt-3">
-    <div class="row">
+    <div class="row row-header">
       <div class="header">
         <div class="title">
 
@@ -22,10 +22,15 @@
     </div>
 
     <div class="row content">
-      <div class="overlay"></div>
-
-     {% include 'partials/tweets.html.twig' with statuses.statuses %}
-
+      <div id="loading">
+        <div id="loader">
+          <p>Chargement en cours</p>
+          <img src="{{ url('assets/img/loading.gif') }}">
+        </div>
+      </div>
+      <div class="row row-tweets">
+        {% include 'partials/tweets.html.twig' with statuses.statuses %}
+      </div>
    </div>
  </div>
 

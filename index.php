@@ -18,13 +18,13 @@ $uri = trim(rtrim($uriRequest, '/'), '/');
 
 foreach ($routes as $name => $route) {
     foreach ($route['path'] as $path) {
-        
+
         if (preg_match('/^'.(str_replace('/', '\/', trim($path, '/'))).'$/', $uri, $matches)) {
-            
+
             list($class, $action) = explode('::', $route['controller'], 2);
 
             $params = [];
-            
+
             if (count($matches) > 0) {
                 unset($matches[0]);
                 $params = $matches;

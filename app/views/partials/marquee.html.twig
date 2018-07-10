@@ -1,17 +1,14 @@
-<div class='slider'>
-    <div class="edge"></div>
-    <ul class="slideContainer" id="money_start">
-        {% for currency in currencies %}
-            <li class="slideItem" id="{{ currency.symbol }}" >
-                <img style="height:16px" src="https://s2.coinmarketcap.com/static/img/coins/16x16/{{ currency.id }}.png">
-                <strong>{{ currency.symbol }}</strong>
-                {{ currency.price }}
-                {{ currency.percent }}
-            </li>
-        {% endfor %}
-    </ul>
-</div>
 
-{% block javascripts %}
-    <script src="{{ url('assets/js/marquee.js') }}"></script>
-{% endblock %}
+<div class="marquee">
+  <div class="edge"></div>
+  <ul class="currencies" id="currencies">
+    {% for currency in currencies %}
+      <li class="currency" id="{{ currency.symbol }}" >
+        <img style="height:16px" src="https://s2.coinmarketcap.com/static/img/coins/16x16/{{ currency.id }}.png">
+        <strong>{{ currency.symbol }}</strong>
+        {{ currency.price }}
+        {{ currency.percent }}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

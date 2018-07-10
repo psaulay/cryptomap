@@ -25,15 +25,25 @@ const post = data => {
   XHR.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
 
   XHR.send(`hashtag=${data}`)
-  
+
+  const loading = document.querySelector('#loading')
+
+  loading.style.display = 'block'
+
   XHR.onreadystatechange = () => {
 
     if(XHR.readyState === 4 && XHR.status === 200) {
 
-      const container = document.querySelector('.content')
-      container.innerHTML = ''
-      container.innerHTML = XHR.responseText
+      setTimeout(() => {
 
+        loading.style.display = 'none'
+
+        const container = document.querySelector('.row-tweets')
+        container.innerHTML = ''
+        container.innerHTML = XHR.responseText
+
+      }, 1000)
+      
     }
 
   }
