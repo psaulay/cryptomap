@@ -17,6 +17,14 @@
     <li>
   </ul>
 
+  <div class="coinmarketcap-currency-widget"
+    data-currencyid="1" data-base="EUR"
+    data-secondary="" data-ticker="false"
+    data-rank="false" data-marketcap="false"
+    data-volume="false" data-stats="USD"
+    data-statsticker="false">
+  </div>
+
   <div id="donations">
     <h5>Donations</h5>
     <img class="donate-img" src="{{ url('assets/img/btcQR.png') }}">
@@ -43,5 +51,9 @@
   <div class="logo" id="hamburger">
     <img id="iHamburger" width="64px" height="64px" src="{{ url('assets/img/menu.png') }}">
   </div>
+
+  {% block javascripts %}
+    <script src="{{ url('assets/js/widget.js') }}"></script>
+  {% endblock %}
 
 </nav>

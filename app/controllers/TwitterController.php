@@ -29,8 +29,7 @@ class TwitterController extends Controller {
             $hashtag = htmlspecialchars($_POST['hashtag']);
 
             echo $this->twig->render('partials/tweets.html.twig', [
-                'statuses' => $this->getTweets($hashtag),
-                'currencies' => Marquee::getMarquee()
+                'statuses' => $this->getTweets($hashtag)
             ]);
 
         }
@@ -45,7 +44,7 @@ class TwitterController extends Controller {
      */
 
     public function getTweets($query)
-    {   
+    {
 
         $config = require('./config.php');
 

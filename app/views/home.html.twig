@@ -10,7 +10,14 @@
       <button class="btn btn-home bitcoin" value="atm">Distributeurs</button>
       <button class="btn btn-home bitcoin" value="reset">Réinitialiser</button>
     </div>
-     <div id="map"></div>
+     <div id="map">
+       <div id="loading">
+         <div id="loader">
+           <p>Chargement en cours</p>
+           <img src="{{ url('assets/img/loading.gif') }}">
+         </div>
+       </div>
+     </div>
   </div>
 
 {% endblock %}

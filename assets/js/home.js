@@ -50,6 +50,10 @@ const post = data => {
 
   XHR.send(`request=${data}`)
 
+  const loading = document.querySelector('#loading')
+
+  loading.style.display = 'block'
+
   XHR.onreadystatechange = () => {
 
     if(XHR.readyState === 4 && XHR.status === 200) {
@@ -81,6 +85,12 @@ const post = data => {
         default: alert('Désolé, une erreur s\est produite.')
 
       }
+
+      setTimeout(() => {
+
+        loading.style.display = 'none'
+
+      }, 500)
 
     }
 
