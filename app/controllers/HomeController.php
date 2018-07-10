@@ -20,7 +20,7 @@ class HomeController extends Controller {
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
       echo $this->twig->render('home.html.twig', [
-        
+        'expand' => true
       ]);
 
     } else {
