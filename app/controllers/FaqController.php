@@ -16,7 +16,7 @@ class FaqController extends Controller {
   {
 
     echo $this->twig->render('faq.html.twig', [
-      'currencies' => Marquee::getMarquee()
+      
     ]);
 
   }
